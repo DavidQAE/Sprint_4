@@ -1,14 +1,9 @@
-package YandexSamokat;
+package yandexsamokat;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
-import java.util.Objects;
-
 public class OrderPageSamokat {
 
     public void clickElement(By locator) {
@@ -62,7 +57,8 @@ public class OrderPageSamokat {
     private By confirmOrderButton = By.xpath(".//button[contains(text(), 'Да')] ");
     // Кнопка принятия куки
     private By CookieButton = By.xpath("//button[@id='rcc-confirm-button']");
-
+    // сообщение о подтверждении создания заказа
+    private By confirmMessage = By.xpath(".//div[@class='Order_ModalHeader__3FDaJ']");
 
 
 
@@ -73,7 +69,7 @@ public class OrderPageSamokat {
 
     public void createOrder(String buttonType, String name, String surname,
                             String address, String metro, String phone, String rent,
-                            String orderDate, String colour, String comment) {
+                            String orderDate, String colour, String comment, String message) {
 //принимаем куки
      clickElement(CookieButton);
 //Нажимаем кнопку заказать
@@ -116,23 +112,9 @@ public class OrderPageSamokat {
         clickElement(orderButton);
 // Нажимаем кнопку "Да"
         clickElement(confirmOrderButton);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Проверка, что появился текст "Заказ Оформлен"
+      String text =  driver.findElement(confirmMessage).getText();
+Assert.assertEquals(text, message);
 
     }
 

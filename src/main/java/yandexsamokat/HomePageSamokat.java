@@ -1,12 +1,9 @@
-package YandexSamokat;
+package yandexsamokat;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -14,7 +11,7 @@ public class HomePageSamokat {
 
 
 
-    private static WebDriver driver;
+    private WebDriver driver;
     // Заголовок ЯндексСамоката
     private By yandexHeader = By.className("Header_Logo__23yGT");
     // Раздел Вопросы о важном
@@ -38,7 +35,7 @@ public class HomePageSamokat {
 
 
 // кнопка принять куки
-    private By CookieButton = By.xpath("//button[@id='rcc-confirm-button']");
+    private By cookieButton = By.xpath("//button[@id='rcc-confirm-button']");
 
     private By listOfQuestions = By.xpath("//div[@class='accordion__item']/parent::div");
 
@@ -50,7 +47,7 @@ public class HomePageSamokat {
         return By.xpath("//div[@class='accordion__item' and contains(text(),'" + questionText + "')]/following-sibling::div");
     }
     public void clickCloseCookies() {
-        WebElement element = driver.findElement(CookieButton);
+        WebElement element = driver.findElement(cookieButton);
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
     }

@@ -1,24 +1,20 @@
-package YandexSamokat;
+package yandexsamokat;
 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import YandexSamokat.HomePageSamokat;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Arrays;
 import java.util.List;
-import static org.junit.Assert.*;
 
-    @RunWith(Parameterized.class)
+@RunWith(Parameterized.class)
     public class VisibilityOfAnswerText {
         private WebDriver driver;
         private final String questionText;
@@ -36,7 +32,7 @@ import static org.junit.Assert.*;
             this.expectedAnswer = expectedAnswer;
         }
         @Parameterized.Parameters
-        public static List<Object[]> getCredentials() {
+        public static List<Object[]> getQuestionsAndAnswers() {
             return Arrays.asList(new Object[][] {
                     {"Сколько это стоит? И как оплатить?", "Сутки — 400 рублей. Оплата курьеру — наличными или картой."},
                     {"Хочу сразу несколько самокатов! Так можно?", "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим."},
