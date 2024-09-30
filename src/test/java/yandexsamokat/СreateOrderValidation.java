@@ -41,6 +41,7 @@ public class СreateOrderValidation {
         this.name = name;
         this.phone = phone;
         this.metro = metro;
+        this.message = message;
 
     }
 
@@ -48,7 +49,7 @@ public class СreateOrderValidation {
     public static List<Object[]> getOrderInformation() {
         return Arrays.asList(new Object[][]{
 
-                {"headerButton", "Владислав", "Струменский", "Г.Москва, улица Новый Арбат д.6", "Арбатская", "89678004534", "двое суток", "01.10.2024", "серая безысходность", "Подойдите ко второму подъезду!", "Заказ оформлен" },
+                {"headerButton", "Владислав", "Струменский", "Г.Москва, улица Новый Арбат д.6", "Арбатская", "89678004534", "двое суток", "01.10.2024", "серая безысходность", "Подойдите ко второму подъезду!", "Заказ оформлен"},
                 {"middleButton", "Ян", "Владик", "Г.Москва, улица Новый Арбат д.6", "Арбатская", "89000000000", "сутки", "10.13.2095", "серая безысходность", "Подойдите ко второму подъезду!", "Заказ оформлен"},
 
         });
@@ -72,7 +73,7 @@ public class СreateOrderValidation {
 
     @Before
     public void setup() {
-        driver = new ChromeDriver();
+
         driver = new FirefoxDriver();
     }
 

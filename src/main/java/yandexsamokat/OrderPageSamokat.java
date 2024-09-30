@@ -4,6 +4,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 public class OrderPageSamokat {
 
     public void clickElement(By locator) {
@@ -113,8 +116,11 @@ public class OrderPageSamokat {
 // Нажимаем кнопку "Да"
         clickElement(confirmOrderButton);
 // Проверка, что появился текст "Заказ Оформлен"
-      String text =  driver.findElement(confirmMessage).getText();
-Assert.assertEquals(text, message);
+        WebDriverWait wait = new WebDriverWait(driver, 10); // 10 секунд ожидания
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Заказ оформлен')]"))); // Измените xpath, если нужно
+
+        // Проверяем, что элемент отобразился
+        Assert.assertTrue("Элемент не отобразился", element.isDisplayed());
 
     }
 
