@@ -22,7 +22,7 @@ public class OrderPageSamokat {
         return By.xpath(".//label[contains(@class, '" + className + "') and text()= '" + text + "']");
     }
 
-    private static WebDriver driver;
+    private  WebDriver driver;
     // Кнопка заказать в шапке страницы
     private By headerOrderButton = By.className("Button_Button__ra12g");
     // Кнопка заказать в середине страницы
