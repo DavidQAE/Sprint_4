@@ -25,12 +25,12 @@ public class СreateOrderValidation {
     private String orderDate;
     private String colour;
     private String comment;
-    private String message;
+
 
 
     public СreateOrderValidation(String buttonType, String name, String surname,
                                  String address, String metro, String phone, String rent,
-                                 String orderDate, String colour, String comment, String message) {
+                                 String orderDate, String colour, String comment) {
         this.address = address;
         this.buttonType = buttonType;
         this.colour = colour;
@@ -41,7 +41,7 @@ public class СreateOrderValidation {
         this.name = name;
         this.phone = phone;
         this.metro = metro;
-        this.message = message;
+
 
     }
 
@@ -49,8 +49,8 @@ public class СreateOrderValidation {
     public static List<Object[]> getOrderInformation() {
         return Arrays.asList(new Object[][]{
 
-                {"headerButton", "Владислав", "Струменский", "Г.Москва, улица Новый Арбат д.6", "Арбатская", "89678004534", "двое суток", "01.10.2024", "серая безысходность", "Подойдите ко второму подъезду!", "Заказ оформлен"},
-                {"middleButton", "Ян", "Владик", "Г.Москва, улица Новый Арбат д.6", "Арбатская", "89000000000", "сутки", "10.13.2095", "серая безысходность", "Подойдите ко второму подъезду!", "Заказ оформлен"},
+                {"headerButton", "Владислав", "Струменский", "Г.Москва, улица Новый Арбат д.6", "Арбатская", "89678004534", "двое суток", "01.10.2024", "серая безысходность", "Подойдите ко второму подъезду!"},
+                {"middleButton", "Ян", "Владик", "Г.Москва, улица Новый Арбат д.6", "Арбатская", "89000000000", "сутки", "10.13.2095", "серая безысходность", "Подойдите ко второму подъезду!"},
 
         });
 
@@ -63,7 +63,7 @@ public class СreateOrderValidation {
 
        objPageSamokat.createOrder(buttonType, name, surname,
                address, metro, phone,  rent,
-               orderDate, colour, comment, message);
+               orderDate, colour, comment);
    }
 
     @After

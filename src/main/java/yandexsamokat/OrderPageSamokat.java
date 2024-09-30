@@ -61,7 +61,7 @@ public class OrderPageSamokat {
     // Кнопка принятия куки
     private By CookieButton = By.xpath("//button[@id='rcc-confirm-button']");
     // сообщение о подтверждении создания заказа
-    private By confirmMessage = By.xpath(".//div[@class='Order_ModalHeader__3FDaJ']");
+
 
 
 
@@ -72,7 +72,7 @@ public class OrderPageSamokat {
 
     public void createOrder(String buttonType, String name, String surname,
                             String address, String metro, String phone, String rent,
-                            String orderDate, String colour, String comment, String message) {
+                            String orderDate, String colour, String comment) {
 //принимаем куки
      clickElement(CookieButton);
 //Нажимаем кнопку заказать
